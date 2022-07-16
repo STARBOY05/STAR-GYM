@@ -1,6 +1,7 @@
 /* Global Styles */
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 :root {
     color: white;
 }
@@ -14,6 +15,7 @@
 
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 h1 {
@@ -32,7 +34,8 @@ h3 {
     color: --var(color);
 }
 
-p, a {
+p,
+a {
     font-size: 1.5rem;
     color: --var(color);
     text-decoration: none;
@@ -118,19 +121,25 @@ article p {
 /* -----------------------------Header Section-----------------------------------*/
 
 header {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), url(/assets/images/main.jpg) no-repeat center / cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url(/assets/images/main.jpg) no-repeat center / cover;
     background-attachment: fixed;
 }
 
 /* -------------------Header Top-------------------- */
 
 #header-top {
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 15px 0;
     /* background-color: gray; */
     min-height: 10vh;
+    position: fixed;
+    left: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0.9;
 }
 
 #logo {
@@ -171,7 +180,7 @@ header {
     /* background-color: gray; */
     width: 100%;
     margin: 0 auto;
-    min-height: 90vh;
+    min-height: 100vh;
     position: relative;
 }
 
@@ -208,7 +217,7 @@ header {
 }
 
 .box {
-    max-width: 95%;
+    max-width: 90%;
     margin: 30px;
     padding: 10px 20px;
     display: flex;
@@ -219,10 +228,9 @@ header {
 }
 
 .box:hover {
-    transition: 0.5s;
-    box-shadow: 5px 5px 5px tomato;
+    transition: 0.5s ease-in;
     cursor: pointer;
-    border-radius: 50px;
+    transform: scale(1.1);
 }
 
 .box img {
@@ -249,11 +257,9 @@ header {
 
 #classes-main {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     /* background-color: green; */
-    padding: 0 50px;
-    min-width: 80%;
     min-height: auto;
     margin: 20px 0;
 }
@@ -263,18 +269,27 @@ header {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    flex-basis: 40%;
+    min-width: 40%;
 }
 
 .classes-box {
-    min-width: 320px;
+    /* min-width: 320px; */
     /* justify-content: space-around; */
-    align-items: center;
+    /* align-items: center;
     display: flex;
     margin: 18px 0;
     background-color: transparent;
     cursor: pointer;
-    border: 1px solid black;
+    border: 1px solid black; */
+    width: 80%;
+    margin: 15px 10px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 5px 5px 10px;
+    background-color: white;
+    border: none;
 }
 
 .classes-box:hover {
@@ -285,7 +300,7 @@ header {
 }
 
 .classes-box img {
-    padding: 20px;
+    padding: 15px;
     margin-right: 25px;
 }
 
@@ -295,19 +310,26 @@ header {
 }
 
 #classes-right {
+    max-width: 40%;
+    text-align: center;
     margin: 0 5px;
     display: flex;
     justify-content: center;
-    flex-direction: column;
     align-items: center;
-    flex-basis: 60%;
+    flex-direction: column;
     color: black;
+    border: 2px solid;
+    padding: 10px;
+    box-shadow: 10px 5px 5px black;
+    border-radius: 20px;
+
 }
 
 #classes-right img {
-    width: 1200px;
-    max-width: 80%;
+    max-width: 75%;
     margin: 15px 0;
+    border: 1px solid black;
+    border-radius: 20px;
 }
 
 #classes-right p {
@@ -325,7 +347,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 30px;
+    margin: 30px 0;
     /* background-color: blue; */
 }
 
@@ -374,9 +396,9 @@ header {
 }
 
 .experts-box h3 {
-    margin-top: 10px;
+    margin-top: 15px;
     color: tomato;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .experts-box p {
@@ -423,14 +445,10 @@ footer {
 }
 
 #contact {
-    min-width: 40%;
-    min-height: 70vh;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    height: 100%;
     background: linear-gradient(rgba(138, 136, 136, 0.2), rgba(0, 0, 0, 0.8));
     display: flex;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
 }
@@ -444,10 +462,10 @@ footer {
 #contact-form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     min-height: 50vh;
-    min-width: 80%;
+    min-width: 50%;
     /* background-color: blue; */
 }
 
@@ -460,7 +478,8 @@ footer {
     margin: 15px 0;
 }
 
-#contact-form input, textarea {
+#contact-form input,
+textarea {
     margin: 15px 0;
     min-width: 80%;
     padding: 10px 15px;
@@ -482,20 +501,25 @@ footer {
     .constrain {
         max-width: 90%;
     }
+
     header {
         background: url(/assets/images/gym-portrait-bg.jpg) no-repeat center / cover;
         background-attachment: fixed;
     }
+
     #logo h3 {
         font-size: 4rem;
     }
+
     nav {
         display: none;
     }
+
     #header-btn .cta-btn {
         margin: 15px;
         padding: 20px 40px;
     }
+
     #header-text {
         position: absolute;
         top: 40%;
@@ -503,69 +527,93 @@ footer {
         transform: translate(-50%, -50%);
         min-width: 100%;
     }
+
     #header-text h1 {
         font-size: 5rem;
     }
+
     #about-text p {
         width: 70%;
         line-height: 2.2rem;
     }
+
     #about-container {
         grid-template-columns: 1fr;
     }
+
     .box {
         max-width: 100%;
         margin: 25px 0;
     }
+
     .box p {
         max-width: 95%;
         margin: 15px 0;
         font-size: 1.5rem;
     }
+
     article {
         padding: 70px 0;
     }
+
     article p {
         max-width: 80%;
     }
+
     #classes-main {
         padding: 0 5px;
         min-height: 50vh;
     }
+
+    #classes-left {
+        width: 0%;
+
+    }
+
     .classes-box {
         margin: 10px 0;
     }
+
     #classes-right h3 {
         margin: 15px 0;
     }
+
     #classes-right p {
         max-width: 75%;
         line-height: 2rem;
         margin: 15px auto 10px auto;
     }
+
     #experts-main {
         flex-direction: column;
     }
+
     .experts-box {
         flex-direction: row;
         margin: 15px;
         width: 350px;
     }
+
     .experts-box:hover {
         width: 600px;
         height: 300px;
     }
+
     .experts-box:hover>img {
         padding: 0 10px;
     }
+
     #contact {
         min-width: 60%;
         min-height: 50vh;
     }
+
     #contact-form div {
         width: 100%;
     }
-    #contact-form input, textarea {
+
+    #contact-form input,
+    textarea {
         min-width: 100%;
     }
 }
@@ -578,20 +626,25 @@ footer {
     .constrain {
         max-width: 95%;
     }
+
     header {
         background: url(/assets/images/gym-portrait-bg.jpg) no-repeat center / cover;
     }
+
     #logo h3 {
         font-size: 1.5rem;
     }
+
     nav {
         display: none;
     }
+
     #header-btn .cta-btn {
         font-size: 1.2rem;
         padding: 5px 15px;
         margin: 10px;
     }
+
     #header-text {
         position: absolute;
         top: 45%;
@@ -599,102 +652,136 @@ footer {
         transform: translate(-50%, -50%);
         min-width: 100%;
     }
+
     #header-text h1 {
         font-size: 3rem;
     }
+
     #header-text h3 {
         font-size: 2rem;
     }
+
     .description p {
         width: 80%;
     }
+
     #about-text {
         padding: 10px 0;
     }
+
     #about-text h3 {
         font-size: 2rem;
     }
+
     #about-text p {
         min-width: 90%;
         line-height: 1.5rem;
         font-size: 1rem;
     }
+
     #about-container {
         grid-template-columns: 1fr;
         padding: 0;
     }
+
     .box {
         max-width: 100%;
         margin: 20px 0;
         padding: 15px;
     }
+
     .box h3 {
         font-size: 1.5rem;
     }
+
     .box p {
         max-width: 100%
     }
+
     .box a {
         font-size: 1.5rem;
         text-align: center;
     }
+
     article {
         text-align: center;
         padding: 15px 0;
     }
+
     article h2 {
         font-size: 2.2rem;
     }
+
     article p {
         max-width: 80%;
         text-align: center;
         font-size: 1.2rem;
     }
+
     #classes-main {
         flex-direction: column;
         padding: 0;
         min-width: 100%;
     }
+
     #classes-left .cta-btn {
         margin: 20px;
     }
+
+    #classes-right {
+        min-width: 75%;
+        margin-top: 20px;
+    }
+
     #classes-right img {
         max-width: 90%;
     }
+
     #classes-right h3 {
         font-size: 2rem;
     }
+
     #classes-right p {
         font-size: 1.2rem;
         line-height: 1.6rem;
     }
+
     #experts-main {
         flex-direction: column;
     }
+
     #experts-main {
         flex-direction: column;
     }
+
     .experts-box {
         height: 220px;
         margin: 10px 20px;
         flex-direction: column;
     }
+
     .experts-box:hover {
         height: 470px;
     }
+
     .experts-box>img {
         width: 250px;
     }
+
     .experts-box:hover>img {
         width: 270px;
     }
+
     #contact {
-        width: 75%;
+        width: 100%;
     }
+
     #contact-form div {
         width: 100%;
     }
-    #contact-form input, textarea {
+
+    #contact-form input,
+    textarea {
         min-width: 100%;
     }
 }
